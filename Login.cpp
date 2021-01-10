@@ -36,6 +36,21 @@ map<string, string> getListOfAccountsFromTextFile(string fileName)
     return listOfAccounts;
 }
 
+bool isValidAccount(string username, string password, map<string, string> listOfAccounts)
+{
+    bool isValid = false;
+    map<string, string>::iterator account;
+    for (account = listOfAccounts.begin(); account != listOfAccounts.end(); ++account)
+    {
+        if (account->first == username && account->second == password)
+        {
+            isValid = true;
+            break;
+        }
+    }
+    return isValid;
+}
+
 int main()
 {
 }
