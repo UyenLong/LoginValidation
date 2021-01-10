@@ -15,6 +15,12 @@ void getLoginInforFromConsole(string &username, string &password)
     getline(cin, password);
 }
 
+void printfLoginInfor(string username, string password)
+{
+    cout << "Your username: " << username << endl;
+    cout << "Your password: " << password << endl;
+}
+
 map<string, string> getListOfAccountsFromTextFile(string fileName)
 {
     map<string, string> listOfAccounts;
