@@ -53,4 +53,25 @@ bool isValidAccount(string username, string password, map<string, string> listOf
 
 int main()
 {
+    string username, password;
+    string isTryAgain;
+    do
+    {
+        getLoginInforFromConsole(username, password);
+        cout << "The information you have just entered: " << endl;
+        printfLoginInfor(username, password);
+        map<string, string> lstOfAccounts = getListOfAccountsFromTextFile("accountInfo.txt");
+        if (isValidAccount(username, password, lstOfAccounts))
+        {
+            cout << "You are authorized to login!" << endl;
+        }
+        else
+        {
+            cout << "Fail to login..." << endl
+                 << "Please enter valid account!" << endl
+                 << "Do you want to try again?" << endl
+                 << "Please enter \"ok\" to try again. Press any characters to exit..." << endl;
+            cin >> isTryAgain;
+        }
+    } while (isTryAgain == "ok");
 }
