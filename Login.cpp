@@ -1,8 +1,19 @@
+#include <iostream>
 #include <fstream>
 #include <string>
 #include <map>
 
 using namespace std;
+
+void getLoginInforFromConsole(string &username, string &password)
+{
+    cin.ignore();
+    cout << "Enter username: " << endl;
+    getline(cin, username);
+    cin.ignore();
+    cout << "Enter password: " << endl;
+    getline(cin, password);
+}
 
 map<string, string> getListOfAccountsFromTextFile(string fileName)
 {
